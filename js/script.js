@@ -26,8 +26,18 @@ generateButton.addEventListener('click', function() {
     singleCell.classList.toggle('cell-box');
     singleCell.innerHTML = i;
     generateBoxCell.appendChild(singleCell);
-  }
+
+  singleCell.addEventListener('click', function(){
+  singleCell.classList.toggle('selected-cell');
+  console.log("you selected: " ,singleCell);
 });
+
+generateBoxCell.appendChild(singleCell);
+}
+});
+
+
+
 
 function createElement(tagName, className) {
   const cellElement = document.createElement(tagName);
