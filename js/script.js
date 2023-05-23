@@ -15,25 +15,22 @@
 
 
 
+let generateButton = document.querySelector('.play-button');
+let generateBoxCell = document.querySelector('.cell-container');
 
+generateButton.addEventListener('click', function() {
+  generateBoxCell.innerHTML = '';
 
+  for (let i = 1; i <= 100; i++) {
+    let singleCell = createElement('div', 'cell');
+    singleCell.classList.toggle('cell-box');
 
-let gridElement = document.querySelector('section.container-cell');
-let generateBoxCell = createElement('div', 'cell-box');
+    generateBoxCell.appendChild(singleCell);
+  }
+});
 
-for (let i = 0; i < 100; i++) {
-
-    generateBoxCell.addEventListener('click', function(){
-        actualCell.classList.toggle('cell-box');
-        
-    });
-
-    gridElement.appendChild(createElement('div', 'cell-box'))
-}
-
-
-function createElement(tagName, className){
-    const cellElement = document.createElement(tagName);
-    cellElement.className = className;
-    return cellElement;
+function createElement(tagName, className) {
+  const cellElement = document.createElement(tagName);
+  cellElement.className = className;
+  return cellElement;
 }

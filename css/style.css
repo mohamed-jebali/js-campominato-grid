@@ -41,5 +41,8 @@ footer{
 
 .cell-container{
     height: calc(100vh - 140px);
+    display: flex;
+    flex-wrap: wrap;
+    margin:  0 auto;
 }
 
