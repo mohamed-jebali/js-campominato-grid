@@ -24,7 +24,7 @@ generateButton.addEventListener('click', function() {
   for (let i = 1; i <= 100; i++) {
     let singleCell = createElement('div', 'cell');
     singleCell.classList.toggle('cell-box');
-
+    singleCell.innerHTML = i;
     generateBoxCell.appendChild(singleCell);
   }
 });

@@ -18,6 +18,9 @@ body{
     width: 500px;
     height: 500px;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .cell{
     width: calc( 100% / 10);
@@ -43,6 +46,6 @@ footer{
     height: calc(100vh - 140px);
     display: flex;
     flex-wrap: wrap;
-    margin:  0 auto;
+    margin: auto;
 }
 
