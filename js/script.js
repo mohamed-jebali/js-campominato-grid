@@ -12,35 +12,60 @@
 // Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
-
-
+  
 
 let generateButton = document.querySelector('.play-button');
 let generateBoxCell = document.querySelector('.cell-container');
+let levelDifficult = document.querySelector("#select-level");
 
 generateButton.addEventListener('click', function() {
   generateBoxCell.innerHTML = '';
 
-  for (let i = 1; i <= 100; i++) {
-    let singleCell = createElement('div', 'cell');
-    singleCell.classList.toggle('cell-box');
-    singleCell.innerHTML = i;
-    generateBoxCell.appendChild(singleCell);
+  if (levelDifficult.value === "difficoltà 1") {
+    for (let i = 1; i <= 100; i++) {
+      let singleCell = createElement('div', 'cell-1');
+      singleCell.classList.toggle('cell-box');
+      singleCell.innerHTML = i;
 
-  singleCell.addEventListener('click', function(){
-  singleCell.classList.toggle('selected-cell');
-  console.log("you selected: " ,singleCell);
+      singleCell.addEventListener('click', function() {
+        singleCell.classList.toggle('selected-cell');
+        console.log("You selected: ", singleCell.innerHTML);
+      });
+
+      generateBoxCell.appendChild(singleCell);
+    }
+  } else if (levelDifficult.value === "difficoltà 2") {
+    for (let i = 1; i <= 81; i++) {
+      let singleCell = createElement('div', 'cell-2');
+      singleCell.classList.toggle('cell-box');
+      singleCell.innerHTML = i;
+
+      singleCell.addEventListener('click', function() {
+        singleCell.classList.toggle('selected-cell');
+        console.log("You selected: ", singleCell.innerHTML);
+      });
+
+      generateBoxCell.appendChild(singleCell);
+    }
+  } else if (levelDifficult.value === "difficoltà 3") {
+    for (let i = 1; i <= 49; i++) {
+      let singleCell = createElement('div', 'cell-3');
+      singleCell.classList.toggle('cell-box');
+      singleCell.innerHTML = i;
+
+      singleCell.addEventListener('click', function() {
+        singleCell.classList.toggle('selected-cell');
+        console.log("You selected: ", singleCell.innerHTML);
+      });
+
+      generateBoxCell.appendChild(singleCell);
+    }
+  }
 });
-
-generateBoxCell.appendChild(singleCell);
-}
-});
-
-
-
 
 function createElement(tagName, className) {
   const cellElement = document.createElement(tagName);
   cellElement.className = className;
   return cellElement;
 }
+
